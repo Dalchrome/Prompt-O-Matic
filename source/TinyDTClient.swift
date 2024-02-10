@@ -48,20 +48,40 @@ class SimpleDTClient : ObservableObject {
 
   // send a prompt, and optional negative prompt, async. Doesn't return anything.
   // it inserts a -1 seed
-    func runPrompt(_ posPrompt:String, cfg:Float, steps:Int, save:Bool, upscale:Bool, thumbnail:Bool, jpeg:Bool, filename :String, subfolder:String, negPrompt:String = "",style:Bool){
+    func runPrompt(_ posPrompt:String, cfg:Float, steps:Int, save:Bool, upscale:Bool, thumbnail:Bool, jpeg:Bool, filename :String, subfolder:String, negPrompt:String = "",style:Bool, seed:Int){
       
         
             // make prompt into json
-                var dictionary:[String:Any?] = ["prompt":posPrompt,"negative_prompt":negPrompt, "seed":-1, "steps":Int(steps) ,"guidance_scale":Float(cfg) ,"save_images":save ,"isUpscale":upscale ,"isThumbnail":thumbnail ,"isJpeg":jpeg ,"filename":filename ,"folder":subfolder, "sampler_index": "LCM"]
+                var dictionary:[String:Any?] = ["prompt":posPrompt,"negative_prompt":negPrompt, "seed":seed, "steps":Int(steps) ,"guidance_scale":Float(cfg) , "sampler": "LCM"]
         
       
 
     do {
+        if save {
+            dictionary["save_images"] = true
+        }
+        if upscale {
+            dictionary["isUpscale"] = true
+        }
+        if thumbnail {
+            dictionary["isThumbnail"] = true
+        }
+        if jpeg {
+            dictionary["isJpeg"] = true
+        }
         if style {
             dictionary["styles"] = "random"
         }
+        if subfolder != "" {
+            dictionary["folder"] = subfolder
+        }
+        if filename != "" {
+            dictionary["filename"] = filename
+        }
+        print(dictionary)
       let myjson =  try HTTPBody.json(dictionary)
       if  let req =   createJSONRequest(json:myjson) {
+          print(myjson)
         runRequest(req)
       }
     }
