@@ -10,6 +10,11 @@
 		821363492B50746500691CB4 /* TinyDTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821363482B50746500691CB4 /* TinyDTClient.swift */; };
 		8213634B2B5074A500691CB4 /* RealHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = 8213634A2B5074A500691CB4 /* RealHTTP */; };
 		8269679E2B5070B00085C032 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8269679D2B5070B00085C032 /* ContentView.swift */; };
+		DF2A78922B5C17C300CBECDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82292CFC2B2E43670042A1C6 /* Assets.xcassets */; };
+		DF4ABCE82B75772A00820273 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8269679D2B5070B00085C032 /* ContentView.swift */; };
+		DF4ABCE92B75772A00820273 /* TinyDTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821363482B50746500691CB4 /* TinyDTClient.swift */; };
+		DF4ABCEB2B75772A00820273 /* RealHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = DF4ABCE52B75772A00820273 /* RealHTTP */; };
+		DF4ABCED2B75772A00820273 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82292CFC2B2E43670042A1C6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +22,8 @@
 		82292CFC2B2E43670042A1C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		826967992B5070B00085C032 /* TinyDTClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyDTClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8269679D2B5070B00085C032 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DF4ABCF12B75772A00820273 /* Prompt-O-Matic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prompt-O-Matic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF4ABCF22B75772A00820273 /* TinyDTClient copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TinyDTClient copy-Info.plist"; path = "/Users/jones/Documents/TinyDTClient-RT/TinyDTClient copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +32,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8213634B2B5074A500691CB4 /* RealHTTP in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF4ABCEA2B75772A00820273 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF4ABCEB2B75772A00820273 /* RealHTTP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +52,7 @@
 				8269679A2B5070B00085C032 /* source */,
 				82292CF72B2E43660042A1C6 /* Assets */,
 				82292CF62B2E43660042A1C6 /* Products */,
+				DF4ABCF22B75772A00820273 /* TinyDTClient copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -44,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				826967992B5070B00085C032 /* TinyDTClient.app */,
+				DF4ABCF12B75772A00820273 /* Prompt-O-Matic.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +105,26 @@
 			productReference = 826967992B5070B00085C032 /* TinyDTClient.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DF4ABCE42B75772A00820273 /* Prompt-O-Matic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF4ABCEE2B75772A00820273 /* Build configuration list for PBXNativeTarget "Prompt-O-Matic" */;
+			buildPhases = (
+				DF4ABCE72B75772A00820273 /* Sources */,
+				DF4ABCEA2B75772A00820273 /* Frameworks */,
+				DF4ABCEC2B75772A00820273 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Prompt-O-Matic";
+			packageProductDependencies = (
+				DF4ABCE52B75772A00820273 /* RealHTTP */,
+			);
+			productName = "Text Gateway";
+			productReference = DF4ABCF12B75772A00820273 /* Prompt-O-Matic.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -127,6 +164,7 @@
 			projectRoot = "";
 			targets = (
 				826967982B5070B00085C032 /* TinyDTClient */,
+				DF4ABCE42B75772A00820273 /* Prompt-O-Matic */,
 			);
 		};
 /* End PBXProject section */
@@ -136,6 +174,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF2A78922B5C17C300CBECDE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF4ABCEC2B75772A00820273 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF4ABCED2B75772A00820273 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +195,15 @@
 			files = (
 				8269679E2B5070B00085C032 /* ContentView.swift in Sources */,
 				821363492B50746500691CB4 /* TinyDTClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF4ABCE72B75772A00820273 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF4ABCE82B75772A00820273 /* ContentView.swift in Sources */,
+				DF4ABCE92B75772A00820273 /* TinyDTClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Assets/TinyDTClient.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -321,6 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Assets/TinyDTClient.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -359,6 +417,95 @@
 			};
 			name = Release;
 		};
+		DF4ABCEF2B75772A00820273 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Assets/TinyDTClient.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = SY87JRZ2T6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TinyDTClient copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Prompt-O-Matic";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.graphics-design";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 tafkad";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tafkad.tinyDTClient;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DF4ABCF02B75772A00820273 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Assets/TinyDTClient.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = SY87JRZ2T6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TinyDTClient copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Prompt-O-Matic";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.graphics-design";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 tafkad";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pea.PromptOmatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -380,10 +527,27 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		DF4ABCEE2B75772A00820273 /* Build configuration list for PBXNativeTarget "Prompt-O-Matic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF4ABCEF2B75772A00820273 /* Debug */,
+				DF4ABCF02B75772A00820273 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		82292D072B2E439E0042A1C6 /* XCRemoteSwiftPackageReference "RealHTTP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/immobiliare/RealHTTP.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.3;
+			};
+		};
+		DF4ABCE62B75772A00820273 /* XCRemoteSwiftPackageReference "RealHTTP" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/immobiliare/RealHTTP.git";
 			requirement = {
@@ -397,6 +561,11 @@
 		8213634A2B5074A500691CB4 /* RealHTTP */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 82292D072B2E439E0042A1C6 /* XCRemoteSwiftPackageReference "RealHTTP" */;
+			productName = RealHTTP;
+		};
+		DF4ABCE52B75772A00820273 /* RealHTTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF4ABCE62B75772A00820273 /* XCRemoteSwiftPackageReference "RealHTTP" */;
 			productName = RealHTTP;
 		};
 /* End XCSwiftPackageProductDependency section */
