@@ -48,13 +48,18 @@ class SimpleDTClient : ObservableObject {
 
   // send a prompt, and optional negative prompt, async. Doesn't return anything.
   // it inserts a -1 seed
-    func runPrompt(_ posPrompt:String, cfg:Float, steps:Int, save:Bool, upscale:Bool, thumbnail:Bool, jpeg:Bool, filename :String, subfolder:String, negPrompt:String = ""){
+    func runPrompt(_ posPrompt:String, cfg:Float, steps:Int, save:Bool, upscale:Bool, thumbnail:Bool, jpeg:Bool, filename :String, subfolder:String, negPrompt:String = "",style:Bool){
       
         
-      // make prompt into json
-        let dictionary:[String:Any?] = ["prompt":posPrompt,"negative_prompt":negPrompt, "seed":-1, "steps":Int(steps) ,"guidance_scale":Float(cfg) ,"save_images":save ,"isUpscale":upscale ,"isThumbnail":thumbnail ,"isJpeg":jpeg ,"filename":filename ,"folder":subfolder ]
+            // make prompt into json
+                var dictionary:[String:Any?] = ["prompt":posPrompt,"negative_prompt":negPrompt, "seed":-1, "steps":Int(steps) ,"guidance_scale":Float(cfg) ,"save_images":save ,"isUpscale":upscale ,"isThumbnail":thumbnail ,"isJpeg":jpeg ,"filename":filename ,"folder":subfolder, "sampler_index": "LCM"]
+        
+      
 
     do {
+        if style {
+            dictionary["styles"] = "random"
+        }
       let myjson =  try HTTPBody.json(dictionary)
       if  let req =   createJSONRequest(json:myjson) {
         runRequest(req)

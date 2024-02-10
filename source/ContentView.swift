@@ -21,9 +21,10 @@ struct ContentView: View {
     @State var upscale:Bool=false
     @State var thumbnail:Bool=false
     @State var jpeg:Bool=false
+    @State var style:Bool=false
     @State var jpglab:String = ".jpg"
-    @State var cfg :Float = 8.5
-    @State var steps :Float = 9
+    @State var cfg :Float = 0.9
+    @State var steps :Float = 2
     @State var filename:String = ""
     @State var subfolder:String = ""
     @State private var isEditing = false
@@ -69,6 +70,8 @@ struct ContentView: View {
                     }
                 }
             }
+            Divider()
+            
             HStack{
                 VStack {
                     Slider(
@@ -76,7 +79,9 @@ struct ContentView: View {
                            in: 1...20,
                            step: 1
                        ) {
-                           Text("Steps")
+                           Text("Steps :")
+                           Text(String(steps.formatted(.number.precision(.fractionLength(0)))))
+                               .foregroundColor(isEditing ? .red : .blue)
                        } minimumValueLabel: {
                            Text("0")
                        } maximumValueLabel: {
@@ -84,16 +89,16 @@ struct ContentView: View {
                        } onEditingChanged: { editing in
                            isEditing = editing
                        }
-                       Text("\(steps)")
-                           .foregroundColor(isEditing ? .red : .blue)
                 }
+                Divider()
                 VStack {
                     Slider(
                            value: $cfg,
                            in: 0.1...15,
                            step: 0.1
                        ) {
-                           Text("CFG")
+                           Text("CFG ")
+                           Text(String(cfg.formatted(.number.precision(.fractionLength(1)))))                           .foregroundColor(isEditing ? .red : .blue)
                        } minimumValueLabel: {
                            Text("0")
                        } maximumValueLabel: {
@@ -101,24 +106,26 @@ struct ContentView: View {
                        } onEditingChanged: { editing in
                            isEditing = editing
                        }
-                       Text("\(cfg)")
-                           .foregroundColor(isEditing ? .red : .blue)
                 }
                 
-                //save square.and.arrow.down
-                //seed dice.fill
-                
-                
-                //detect som/dt
-                //models
-                //schedulers
-                //
+
                 Spacer()
             }
-          TextField("Prompt:", text: $prompt).onSubmit {
-                
-              requester.runPrompt(prompt, cfg: cfg, steps: steps, save: save, upscale: upscale, thumbnail: thumbnail, jpeg: jpeg, filename: filename, subfolder: subfolder)
-          }
+            .frame(maxHeight: 40)
+            HStack{
+                Toggle(isOn: $style) {
+                    Label("Styles", systemImage: "dice.fill")
+                        .padding([.leading], -2)
+                        .padding([.trailing], -2)
+                }
+                .toggleStyle(.button)
+                TextField("Prompt:", text: $prompt).onSubmit {
+                    
+                    requester.runPrompt(prompt, cfg: cfg, steps: steps, save: save, upscale: upscale, thumbnail: thumbnail, jpeg: jpeg, filename: filename, subfolder: subfolder, style: style)
+                }
+            }
+            
+            
 
           if requester.image != nil {
             Image(nsImage: requester.image!)
@@ -134,9 +141,9 @@ class simpleImageRequester : ObservableObject {
  static var shared = simpleImageRequester()  //  make it a global, so async routines can find me
   @Published var image:NSImage?
 
-    func runPrompt(_ prompt:String, cfg:Float, steps:Float, save:Bool, upscale:Bool, thumbnail:Bool, jpeg:Bool, filename :String, subfolder:String){
+    func runPrompt(_ prompt:String, cfg:Float, steps:Float, save:Bool, upscale:Bool, thumbnail:Bool, jpeg:Bool, filename :String, subfolder:String, style:Bool){
       
-        SimpleDTClient.shared.runPrompt(prompt,cfg: cfg,steps: Int(steps), save: save, upscale: upscale, thumbnail: thumbnail, jpeg: jpeg, filename: filename, subfolder: subfolder)
+        SimpleDTClient.shared.runPrompt(prompt,cfg: cfg,steps: Int(steps), save: save, upscale: upscale, thumbnail: thumbnail, jpeg: jpeg, filename: filename, subfolder: subfolder, style: style)
   }
 
   func returnImage(_ imageData:Data){
